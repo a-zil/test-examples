@@ -20,9 +20,9 @@ export class LoginPage {
         await expect(this.signUpFormHeading).toBeVisible();
     }
 
-    async submitSignUpForm() {
-        await this.signUpNameInput.fill("customer15");
-        await this.signUpEmailInput.fill("customer15@gmail.com");
+    async submitSignUpForm(name, email) {
+        await this.signUpNameInput.fill(name);
+        await this.signUpEmailInput.fill(email);
         await this.signUpButton.click();
     }
 }
