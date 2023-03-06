@@ -10,9 +10,9 @@ export class LoginPage {
   constructor(page) {
     this.page = page
     this.signUpFormHeading = this.page.locator('.signup-form h2')
-    this.signUpNameInput = this.page.locator(".signup-form input[name='name']")
+    this.signUpNameInput = this.page.locator('.signup-form input[name="name"]')
     this.signUpEmailInput = this.page.locator(
-      ".signup-form input[name='email']"
+      '.signup-form input[name="email"]'
     )
     this.signUpButton = this.page.locator('.signup-form button')
   }
