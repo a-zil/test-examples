@@ -10,8 +10,12 @@ export class LoginPage {
     constructor(page) {
         this.page = page;
         this.signUpFormHeading = this.page.locator(".signup-form h2");
-        this.signUpNameInput = this.page.locator(".signup-form input[name='name']");
-        this.signUpEmailInput = this.page.locator(".signup-form input[name='email']");
+        this.signUpNameInput = this.page.locator(
+            ".signup-form input[name='name']"
+        );
+        this.signUpEmailInput = this.page.locator(
+            ".signup-form input[name='email']"
+        );
         this.signUpButton = this.page.locator(".signup-form button");
     }
 
@@ -20,7 +24,7 @@ export class LoginPage {
         await expect(this.signUpFormHeading).toBeVisible();
     }
 
-    async submitSignUpForm(name, email) {
+    async submitSignUpForm(name: string, email: string) {
         await this.signUpNameInput.fill(name);
         await this.signUpEmailInput.fill(email);
         await this.signUpButton.click();
