@@ -4,7 +4,7 @@ const config: PlaywrightTestConfig = {
   timeout: 60000,
   retries: 0,
   use: {
-    headless: false,
+    headless: true,
     actionTimeout: 15000,
   },
   projects: [
