@@ -2,15 +2,13 @@ import { expect, Page, Locator } from "@playwright/test";
 
 export class HomePage {
     readonly page: Page;
-    readonly featuresItemsHeadingLocator: Locator;
-    readonly loginNavLinkLocator: Locator;
+    readonly featuresItemsHeading: Locator;
+    readonly loginNavLink: Locator;
 
     constructor(page) {
         this.page = page;
-        this.featuresItemsHeadingLocator = this.page.locator(
-            ".features_items .title"
-        );
-        this.loginNavLinkLocator = this.page.locator(".nav a[href='/login']");
+        this.featuresItemsHeading = this.page.locator(".features_items .title");
+        this.loginNavLink = this.page.locator(".nav a[href='/login']");
     }
 
     async navigate() {
@@ -18,13 +16,11 @@ export class HomePage {
     }
 
     async assertHomePageToBeVisisble() {
-        await expect(this.featuresItemsHeadingLocator).toHaveText(
-            "Features Items"
-        );
-        await expect(this.featuresItemsHeadingLocator).toBeVisible();
+        await expect(this.featuresItemsHeading).toHaveText("Features Items");
+        await expect(this.featuresItemsHeading).toBeVisible();
     }
 
     async navigateToLoginPage() {
-        await this.loginNavLinkLocator.click();
+        await this.loginNavLink.click();
     }
 }
